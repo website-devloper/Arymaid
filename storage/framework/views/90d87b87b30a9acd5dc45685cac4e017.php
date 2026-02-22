@@ -308,7 +308,7 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a><?php echo e($Lproduct->categorie); ?></a>
+                                            <a><?php echo e($Lproduct->categorie_rel->type); ?></a>
                                         </div><!-- End .product-cat -->
                                         <h3 class="product-title"><a href="product.html"><?php echo e($Lproduct->name); ?></a></h3>
                                         <!-- End .product-title -->
@@ -378,7 +378,7 @@
 
                                             <div class="product-body">
                                                 <div class="product-cat">
-                                                    <a href="#"><?php echo e($product->categorie); ?></a>
+                                                    <a href="#"><?php echo e($product->categorie_rel->type); ?></a>
                                                 </div><!-- End .product-cat -->
                                                 <h3 class="product-title"><a><?php echo e($product->name); ?></a></h3><!-- End .product-title -->
                                                 <div class="product-price">

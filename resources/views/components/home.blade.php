@@ -308,7 +308,7 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a>{{$Lproduct->categorie}}</a>
+                                            <a>{{$Lproduct->categorie_rel->type}}</a>
                                         </div><!-- End .product-cat -->
                                         <h3 class="product-title"><a href="product.html">{{$Lproduct->name}}</a></h3>
                                         <!-- End .product-title -->
@@ -378,7 +378,7 @@
 
                                             <div class="product-body">
                                                 <div class="product-cat">
-                                                    <a href="#">{{$product->categorie}}</a>
+                                                    <a href="#">{{$product->categorie_rel->type}}</a>
                                                 </div><!-- End .product-cat -->
                                                 <h3 class="product-title"><a>{{$product->name}}</a></h3><!-- End .product-title -->
                                                 <div class="product-price">

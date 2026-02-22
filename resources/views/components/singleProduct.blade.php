@@ -4,8 +4,8 @@
     <link rel="manifest" href="/assets/images/icons/site.html">
     <link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#666666">
     <link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
-    <meta name="apple-mobile-web-app-title" content="Molla">
-    <meta name="application-name" content="Molla">
+    <meta name="apple-mobile-web-app-title" content="Arymaid">
+    <meta name="application-name" content="Arymaid">
     <meta name="msapplication-TileColor" content="#cc9966">
     <meta name="msapplication-config" content="/assets/images/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">

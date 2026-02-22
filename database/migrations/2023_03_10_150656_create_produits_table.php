@@ -21,7 +21,8 @@ return new class extends Migration
             $table->string('description');
             $table->string('description2');
             $table->string('stock');
-            $table->string('categorie');
+            $table->unsignedBigInteger('categorie_id');
+            $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
             $table->string('status')->default('unavailable');
             $table->double('oldPrice');
             $table->timestamps();

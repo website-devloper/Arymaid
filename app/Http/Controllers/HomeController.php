@@ -16,8 +16,8 @@ class HomeController extends Controller
 
     public function Home(){
         
-        $latestProducts=produit::latest()->paginate(10);
-        $products=produit::paginate(20);
+        $latestProducts=produit::with('categorie_rel')->latest()->take(10)->get();
+        $products=produit::with('categorie_rel')->paginate(20);
         $categories=categorie::all();
         return view('components.home',compact('latestProducts','categories','products') );
     }

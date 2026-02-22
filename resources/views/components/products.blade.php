@@ -28,7 +28,7 @@
                                         ######################################
                                         ###################################### -->
                 					<div class="toolbox-info">
-                						Showing <span>9 of 56</span> Products
+                						Showing <span>{{$produits->count()}} of {{$produits->total()}}</span> Products
                 					</div><!-- End .toolbox-info -->
                                     <!-- ############################################
                                          ############################################
@@ -39,10 +39,11 @@
                 					<div class="toolbox-sort">
                 						<label for="sortby">Sort by:</label>
                 						<div class="select-custom">
-											<select name="sortby" id="sortby" class="form-control">
-												<option value="popularity" selected="selected">Most Popular</option>
-												<option value="rating">Most Rated</option>
-												<option value="date">Date</option>
+											<select name="sortby" id="sortby" class="form-control" onchange="submitSorting(this.value)">
+												<option value="popularity" {{ request('sortby') == 'popularity' ? 'selected' : '' }}>Most Popular</option>
+												<option value="price-low" {{ request('sortby') == 'price-low' ? 'selected' : '' }}>Price: Low to High</option>
+												<option value="price-high" {{ request('sortby') == 'price-high' ? 'selected' : '' }}>Price: High to Low</option>
+												<option value="date" {{ request('sortby') == 'date' ? 'selected' : '' }}>Newest</option>
 											</select>
 										</div>
                 					</div><!-- End .toolbox-sort -->
@@ -85,7 +86,7 @@
 
                                             <div class="product-body">
                                                 <div class="product-cat">
-                                                    <a href="#">{{$produit->categorie}}</a>
+                                                    <a href="/products/{{$produit->categorie_id}}">{{$produit->categorie_rel->type}}</a>
                                                 </div><!-- End .product-cat -->
                                                 <h3 class="product-title"><a href="product.html">{{$produit->name}}</a></h3><!-- End .product-title -->
                                                 <div class="product-price">
@@ -111,8 +112,10 @@
                 			<div class="sidebar sidebar-shop">
                 				<div class="widget widget-clean">
                 					<label>Filters:</label>
-                					<a href="#" class="sidebar-filter-clear">Clean All</a>
+                					<a href="/products" class="sidebar-filter-clear">Clean All</a>
                 				</div><!-- End .widget widget-clean -->
+
+                                <form action="/products" method="GET" id="filter-form">
 
                 				<div class="widget widget-collapsible">
     								<h3 class="widget-title">
@@ -128,7 +131,7 @@
 
 												<div class="filter-item">
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox" class="custom-control-input" id="cat-{{$categorie->id}}">
+														<input type="checkbox" name="category[]" value="{{$categorie->id}}" class="custom-control-input" id="cat-{{$categorie->id}}" {{ is_array(request('category')) && in_array($categorie->id, request('category')) ? 'checked' : '' }}>
 														<label class="custom-control-label" for="cat-{{$categorie->id}}">{{$categorie->type}}</label>
 													</div><!-- End .custom-checkbox -->
 													<span class="item-count">0</span>
@@ -149,19 +152,54 @@
 									<div class="collapse show" id="widget-5">
 										<div class="widget-body">
                                             <div class="filter-price">
-                                                <div class="filter-price-text">
-                                                    Price Range:
-                                                    <span id="filter-price-range"></span>
-                                                </div><!-- End .filter-price-text -->
-
-                                                <div id="price-slider"></div><!-- End #price-slider -->
+                                                <div id="price-slider" class="mb-3"></div><!-- End #price-slider -->
+                                                
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <label>Min</label>
+                                                        <input type="number" name="min_price" id="min-price-input" class="form-control" value="{{ request('min_price', 0) }}" placeholder="Min">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label>Max</label>
+                                                        <input type="number" name="max_price" id="max-price-input" class="form-control" value="{{ request('max_price', 500) }}" placeholder="Max">
+                                                    </div>
+                                                </div>
+                                                
+                                                <button type="submit" class="btn btn-primary btn-block mt-3">Apply Price Filter</button>
                                             </div><!-- End .filter-price -->
 										</div><!-- End .widget-body -->
 									</div><!-- End .collapse -->
         						</div><!-- End .widget -->
+                                </form>
+                                <input type="hidden" name="sortby" id="sortby-hidden" form="filter-form" value="{{ request('sortby') }}">
                 			</div><!-- End .sidebar sidebar-shop -->
                 		</aside><!-- End .col-lg-3 -->
                 	</div><!-- End .row -->
                 </div><!-- End .container -->
             </div><!-- End .page-content -->
         </main><!-- End .main -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var checkExist = setInterval(function() {
+        if (typeof noUiSlider === 'object') {
+            var priceSlider = document.getElementById('price-slider');
+            if (priceSlider && priceSlider.noUiSlider) {
+                clearInterval(checkExist);
+                priceSlider.noUiSlider.on('update', function(values, handle) {
+                    var min = values[0].replace(/[^0-9]/g, '');
+                    var max = values[1].replace(/[^0-9]/g, '');
+                    document.getElementById('min-price-hidden').value = min;
+                    document.getElementById('max-price-hidden').value = max;
+                });
+                priceSlider.noUiSlider.set([{{ request('min_price', 0) }}, {{ request('max_price', 1000) }}]);
+            }
+        }
+    }, 100);
+});
+
+function submitSorting(val) {
+    document.getElementById('sortby-hidden').value = val;
+    document.getElementById('filter-form').submit();
+}
+</script>

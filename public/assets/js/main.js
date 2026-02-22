@@ -176,12 +176,12 @@ $(document).ready(function () {
 			margin: 200,
 			range: {
 				'min': 0,
-				'max': 1000
+				'max': 500
 			},
 			tooltips: true,
 			format: wNumb({
 		        decimals: 0,
-		        prefix: '$'
+		        suffix: ' DH'
 		    })
 		});
 

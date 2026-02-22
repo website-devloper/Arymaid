@@ -13,6 +13,14 @@ class CategorieSeeder extends Seeder
      */
     public function run(): void
     {
-        categorie::factory(5)->create();
+        $categories = [
+            ['type' => 'Housekeeping'],
+            ['type' => 'Laundry & Ironing'],
+            ['type' => 'Home Essentials'],
+        ];
+
+        foreach ($categories as $cat) {
+            categorie::create($cat);
+        }
     }
 }

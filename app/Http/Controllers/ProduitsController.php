@@ -11,20 +11,46 @@ class ProduitsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $categories=categorie::all();
-       $produits=produit::paginate(20);
-    return view('components.products',compact('produits','categories'));
+        $categories = categorie::all();
+        $query = produit::with('categorie_rel');
 
+        if ($request->has('category')) {
+            $categoryIds = is_array($request->category) ? $request->category : [$request->category];
+            $query->whereIn('categorie_id', $categoryIds);
+        }
+
+        if ($request->has('min_price')) {
+            $query->where('price', '>=', $request->min_price);
+        }
+
+        if ($request->has('max_price')) {
+            $query->where('price', '<=', $request->max_price);
+        }
+
+        if ($request->has('sortby')) {
+            switch ($request->sortby) {
+                case 'price-low':
+                    $query->orderBy('price', 'asc');
+                    break;
+                case 'price-high':
+                    $query->orderBy('price', 'desc');
+                    break;
+                case 'date':
+                    $query->orderBy('created_at', 'desc');
+                    break;
+            }
+        }
+
+        $produits = $query->paginate(12)->withQueryString();
+
+        return view('components.products', compact('produits', 'categories'));
     }
 
     public function ProductsBycategorie($id)
     {
-        $categories=categorie::all();
-       $produits=produit::where('categorie',$id)->paginate(20);
-    return view('components.products',compact('produits','categories'));
-
+        return redirect()->route('products.index', ['category' => $id]);
     }
     
 
@@ -33,10 +59,13 @@ class ProduitsController extends Controller
        $categories = categorie::all();
 
        $searchTerm = $request->input('search');
-       $produits = produit::where('name', 'LIKE', '%'.$searchTerm.'%')
+       $produits = produit::with('categorie_rel')
+                           ->where('name', 'LIKE', '%'.$searchTerm.'%')
                            ->orWhere('utilisation', 'LIKE', '%'.$searchTerm.'%')
                            ->orWhere('description', 'LIKE', '%'.$searchTerm.'%')
-                           ->orWhere('categorie', 'LIKE', '%'.$searchTerm.'%')
+                           ->orWhereHas('categorie_rel', function($query) use ($searchTerm) {
+                               $query->where('type', 'LIKE', '%'.$searchTerm.'%');
+                           })
                            ->paginate(20);
 
                            

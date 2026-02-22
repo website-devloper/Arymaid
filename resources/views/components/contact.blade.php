@@ -39,7 +39,7 @@
                 							</li>
                 							<li>
                 								<i class="icon-envelope"></i>
-                								<a href="mailto:#">info@Molla.com</a>
+                								<a href="mailto:#">info@arymaid.com</a>
                 							</li>
                 						</ul><!-- End .contact-list -->
                 					</div><!-- End .contact-info -->
