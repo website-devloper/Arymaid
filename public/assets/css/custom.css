@@ -1,9 +1,12 @@
 :root {
-    --primary-color: #064e3b; /* Emerald Green */
+    --primary-color: #064e3b;
+    /* Deep Emerald */
     --primary-hover: #065f46;
-    --accent-color: #af944d; /* Soft Gold */
-    --accent-hover: #c5a95d;
-    --bg-light: #f8fafc; /* Cream/Off-white */
+    --primary-accent: #10b981;
+    /* Vibrant Emerald for badges/highlights */
+    --primary-light: #d1fae5;
+    /* Soft Green for backgrounds/states */
+    --bg-light: #f8fafc;
     --text-main: #1e293b;
 }
 
@@ -15,7 +18,8 @@ body {
 }
 
 /* Primary Button Overrides */
-.btn-primary, .btn-outline-primary-2 {
+.btn-primary,
+.btn-outline-primary-2 {
     background-color: var(--primary-color) !important;
     border-color: var(--primary-color) !important;
     color: #fff !important;
@@ -24,7 +28,8 @@ body {
     transition: all 0.3s ease;
 }
 
-.btn-primary:hover, .btn-outline-primary-2:hover {
+.btn-primary:hover,
+.btn-outline-primary-2:hover {
     background-color: var(--primary-hover) !important;
     border-color: var(--primary-hover) !important;
 }
@@ -50,12 +55,17 @@ a:hover {
 
 /* Custom Accents */
 .product-price {
-    color: var(--accent-color) !important;
+    color: var(--primary-color) !important;
     font-weight: 700;
 }
 
-.wishlist-count, .cart-count {
-    background-color: var(--accent-color) !important;
+.wishlist-count,
+.cart-count {
+    background-color: var(--primary-accent) !important;
+}
+
+.product-label.label-new {
+    background-color: var(--primary-accent) !important;
 }
 
 /* Header Adjustments */
@@ -63,6 +73,82 @@ a:hover {
     border-bottom: 2px solid var(--primary-color);
 }
 
+.main-nav .menu>li>a:hover,
+.main-nav .menu>li>a:focus,
+.main-nav .menu>li.active>a {
+    color: var(--primary-color) !important;
+}
+
 .logo img {
-    filter: brightness(0) saturate(100%) invert(18%) sepia(23%) find(16%) find(53%) find(45%); /* Adjust logo color if needed */
+    filter: brightness(0) saturate(100%) invert(18%) sepia(23%) saturate(1000%) hue-rotate(120deg);
+    /* Adjust logo color if needed */
+}
+
+/* Footer Overrides */
+.footer a:hover,
+.footer a:focus {
+    color: var(--primary-color) !important;
+}
+
+.social-icon:hover,
+.social-icon:focus {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.widget-title {
+    color: var(--primary-color) !important;
+}
+
+/* Authentication Pages */
+.nav-pills .nav-link.active {
+    color: var(--primary-color) !important;
+    border-bottom-color: var(--primary-color) !important;
+}
+
+.btn-outline-primary-2 {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-outline-primary-2:hover {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+
+/* Category Dropdown (Browse Categories) */
+.category-dropdown .dropdown-toggle {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+
+.category-dropdown .dropdown-toggle::after {
+    color: #fff !important;
+}
+
+/* Add to Cart Button */
+.btn-product.btn-cart {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.btn-product.btn-cart:hover {
+    background-color: var(--primary-hover) !important;
+}
+
+/* Product Action Icons (Wishlist, Quickview, etc) */
+.btn-product-icon {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-product-icon:hover {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+
+/* Fix for icons inside action buttons */
+.btn-product-icon i {
+    color: inherit !important;
 }

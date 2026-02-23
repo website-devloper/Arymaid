@@ -36,6 +36,10 @@ Route::get('/about', [HomeController::class,'About']);
 
 Route::get('/contact',[HomeController::class,'Contact']);
 
+Route::get('/login',[HomeController::class,'Login'])->name('login');
+
+Route::get('/register',[HomeController::class,'Register'])->name('register');
+
 Route::get('/signin-modal',[HomeController::class,'SigninModal']);
 
 Route::get('/checkout',[HomeController::class,'Checkout']);

@@ -45,11 +45,20 @@ class HomeController extends Controller
 
 
 
-// ---------------------------------------------------
+    public function Login()
+    {
+        return view('components.login');
+    }
+
+    public function Register()
+    {
+        return view('components.register');
+    }
+
     public function SigninModal()
-{
-    return view('partials.signInModal');
-}
+    {
+        return view('partials.signInModal');
+    }
 
 
 // public function CartShow()

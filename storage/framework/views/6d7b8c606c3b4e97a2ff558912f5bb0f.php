@@ -14,11 +14,8 @@
                     <div class="row">
                         <div class="col-sm-12 col-lg-4">
                             <div class="widget widget-about">
-                                <img src="assets/images/demos/demo-14/logo-footer.png" class="footer-logo"
-                                    alt="Footer Logo" width="105" height="25">
-                                <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate
-                                    magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
-                                    porttitor, facilisis luctus, metus. </p>
+                                <h2 style="color: var(--primary-color); font-weight: 800; font-size: 2rem; margin-bottom: 1.5rem;">ARYMAID</h2>
+                                <p>Premium household essentials curated for your comfort. Arymaid brings you the finest quality products with a touch of elegance and durability. </p>
 
                                 <div class="widget-about-info">
                                     <div class="row">
@@ -72,9 +69,9 @@
                                 <h4 class="widget-title">My Account</h4><!-- End .widget-title -->
 
                                 <ul class="widget-list">
-                                    <li><a href="#">Sign In</a></li>
-                                    <li><a href="cart.html">View Cart</a></li>
-                                    <li><a href="#">My Wishlist</a></li>
+                                    <li><a href="/login">Sign In</a></li>
+                                    <li><a href="/cart/<?php echo e(session('id') ?? 'guest'); ?>/products">View Cart</a></li>
+                                    <li><a href="/wishlist/<?php echo e(session('id') ?? 'guest'); ?>/products">My Wishlist</a></li>
                                     <li><a href="#">Track My Order</a></li>
                                     <li><a href="#">Help</a></li>
                                 </ul><!-- End .widget-list -->

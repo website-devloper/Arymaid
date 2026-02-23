@@ -69,9 +69,9 @@
                                 <h4 class="widget-title">My Account</h4><!-- End .widget-title -->
 
                                 <ul class="widget-list">
-                                    <li><a href="#">Sign In</a></li>
-                                    <li><a href="cart.html">View Cart</a></li>
-                                    <li><a href="#">My Wishlist</a></li>
+                                    <li><a href="/login">Sign In</a></li>
+                                    <li><a href="/cart/{{session('id') ?? 'guest'}}/products">View Cart</a></li>
+                                    <li><a href="/wishlist/{{session('id') ?? 'guest'}}/products">My Wishlist</a></li>
                                     <li><a href="#">Track My Order</a></li>
                                     <li><a href="#">Help</a></li>
                                 </ul><!-- End .widget-list -->

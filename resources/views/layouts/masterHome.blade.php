@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/skins/skin-demo-14.css">
     <link rel="stylesheet" href="assets/css/demos/demo-14.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
     
 
 

@@ -39,7 +39,7 @@
                                         </div><!-- End .header-menu -->
                                     </div>
                                 @else
-                                    <a href="/signin-modal" style="color: #fff; font-weight: 600;"><i class="icon-user"></i> Sign in / Sign up</a>
+                                    <a href="/login" style="color: #fff; font-weight: 600;"><i class="icon-user"></i> Sign in / Sign up</a>
                                 @endif
                             </li>
                         </ul><!-- End .top-menu -->

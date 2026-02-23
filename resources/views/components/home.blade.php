@@ -23,11 +23,11 @@
                             <div class="intro-content">
                                 <h3 class="intro-subtitle">New Arrivals</h3><!-- End .h3 intro-subtitle -->
                                 <h1 class="intro-title text-white">
-                                    The New Way <br>To Buy Furniture
+                                    The New Era of <br>Home Comfort
                                 </h1><!-- End .intro-title -->
 
                                 <div class="intro-text text-white">
-                                    Spring Collections 2019
+                                    Exclusive Collections 2026
                                 </div><!-- End .intro-text -->
 
                                 <a href="category.html" class="btn btn-primary">
@@ -49,7 +49,7 @@
                             <div class="intro-content">
                                 <h3 class="intro-subtitle">Hottest Deals</h3><!-- End .h3 intro-subtitle -->
                                 <h1 class="intro-title">
-                                    <span>Wherever You Go</span> <br>DJI Mavic 2 Pro
+                                    <span>Premium Quality</span> <br>Essential Living
                                 </h1><!-- End .intro-title -->
 
                                 <div class="intro-price">
@@ -79,11 +79,11 @@
                                 <h3 class="intro-subtitle">Limited Quantities</h3>
                                 <!-- End .h3 intro-subtitle -->
                                 <h1 class="intro-title">
-                                    Refresh Your <br>Wardrobe
+                                    Refresh Your <br>Living Space
                                 </h1><!-- End .intro-title -->
 
                                 <div class="intro-text">
-                                    Summer Collection 2019
+                                    Summer Collection 2026
                                 </div><!-- End .intro-text -->
 
                                 <a href="category.html" class="btn btn-primary">

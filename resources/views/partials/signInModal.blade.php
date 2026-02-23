@@ -1,14 +1,53 @@
 @include('partials.topheader')
 @include('styles.styleHome')
 
-<div id="signin-modal" tabindex="-1" >
-        <div class="modal-dialog modal-dialog-centered" >
-            <div class="modal-content">
-                <div class="modal-body">
+    <style>
+        .form-box {
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: #fff;
+            padding: 4.5rem 3rem 4rem;
+        }
+        .nav-pills .nav-link {
+            color: var(--text-main);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid transparent;
+            padding: 1rem;
+        }
+        .nav-pills .nav-link.active {
+            background-color: transparent !important;
+            color: var(--primary-color) !important;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .form-control {
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            padding: 1.2rem;
+            height: auto;
+        }
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(6, 78, 59, 0.1);
+        }
+        .btn-outline-primary-2 {
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 1rem 2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
 
+    <div id="signin-modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border: none; background: transparent;">
+                <div class="modal-body p-0">
                     <div class="form-box">
                         <div class="form-tab">
-                            <ul class="nav nav-pills nav-fill" role="tablist">
+                            <ul class="nav nav-pills nav-fill mb-4" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="signin-tab" data-toggle="tab" href="#signin" role="tab" aria-controls="signin" aria-selected="true">Sign In</a>
                                 </li>
@@ -16,96 +55,75 @@
                                     <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
                                 </li>
                             </ul>
-                            <div class="tab-content" id="tab-content-5">
-                                <!-- ##########################################################################################################################################3
-                            ############################################################   LOGIN USER    ################################################################## -->
-                                <div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
+                            
+                            @if(session('error'))
+                                <div class="alert alert-danger mb-3" style="border-radius: 4px; font-size: 0.9rem;">
+                                    {{ session('error') }}
+                                </div>
+                            @endif
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="signin" role="tabpanel">
                                     <form action="{{route('postLogin')}}" method="POST">
                                         @csrf
+                                        <div class="form-group mb-4">
+                                            <label class="mb-1" style="font-weight: 500;">Email Address</label>
+                                            <input type="email" class="form-control" name="signin-email" placeholder="Enter your email" required>
+                                        </div>
 
+                                        <div class="form-group mb-4">
+                                            <label class="mb-1" style="font-weight: 500;">Password</label>
+                                            <input type="password" class="form-control" name="signin-password" placeholder="Enter password" required>
+                                        </div>
 
-                                        <div class="form-group">
-                                            <label for="singin-email">Username or email address *</label>
-                                            <input type="text" class="form-control" id="singin-email" name="signin-email" required>
-                                           
-                                        </div><!-- End .form-group -->
-
-
-                                        <div class="form-group">
-                                            <label for="singin-password">Password *</label>
-                                            <input type="password" class="form-control" id="singin-password" name="signin-password" required>
-                                            
-                                        </div><!-- End .form-group -->
-
-
-                                        <div class="form-footer">
+                                        <div class="form-footer d-flex justify-content-between align-items-center mt-5">
                                             <button type="submit" class="btn btn-outline-primary-2">
-                                                <span>LOG IN</span>
-                                                <i class="icon-long-arrow-right"></i>
+                                                <span>Log In</span>
                                             </button>
 
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="signin-remember">
-                                                <label class="custom-control-label" for="signin-remember">Remember Me</label>
-                                            </div><!-- End .custom-checkbox -->
-
-                                            <a href="#" class="forgot-link">Forgot Your Password?</a>
-                                        </div><!-- End .form-footer -->
+                                                <label class="custom-control-label" for="signin-remember">Stay signed in</label>
+                                            </div>
+                                        </div>
                                     </form>
-                                </div><!-- .End .tab-pane -->
+                                </div>
 
-
-
-
-
-<!-- ##########################################################################################################################################3
-############################################################   REGISTER USER    ################################################################## -->
-
-
-                                <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                <div class="tab-pane fade" id="register" role="tabpanel">
                                     <form action="{{route('postRegister')}}" method="POST">
-                                    @csrf
-                                    <div class="form-group">
-                                            <label for="register-name">Name *</label>
-                                            <input type="text" class="form-control" id="register-name" name="register-name" required>
-                                           
-                                        </div><!-- End .form-group -->
-                                        <div class="form-group">
-                                            <label for="register-email">Your email address *</label>
-                                            <input type="email" class="form-control" id="register-email" name="register-email" required>
-                                           
-                                        </div><!-- End .form-group -->
-                                        <div class="form-group">
-                                            <label for="register-password">Password *</label>
-                                            <input type="password" class="form-control" id="register-password" name="register-password" required>
-                                            
-                                        </div><!-- End .form-group -->
-                                        <div class="form-group">
-                                            <label for="register-confirmpass">Confirm password *</label>
-                                            <input type="password" class="form-control" id="register-confirmpass" name="register-confirm" required>
-                                           
-                                        </div><!-- End .form-group -->
+                                        @csrf
+                                        <div class="form-group mb-3">
+                                            <label class="mb-1">Full Name</label>
+                                            <input type="text" class="form-control" name="register-name" required>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label class="mb-1">Email Address</label>
+                                            <input type="email" class="form-control" name="register-email" required>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label class="mb-1">Create Password</label>
+                                            <input type="password" class="form-control" name="register-password" required>
+                                        </div>
+                                        <div class="form-group mb-5">
+                                            <label class="mb-1">Confirm Password</label>
+                                            <input type="password" class="form-control" name="register-confirm" required>
+                                        </div>
 
-                                        <div class="form-footer">
-                                            <button type="submit" class="btn btn-outline-primary-2">
-                                                <span>SIGN UP</span>
-                                                <i class="icon-long-arrow-right"></i>
+                                        <div class="form-footer mt-4">
+                                            <button type="submit" class="btn btn-outline-primary-2 btn-block">
+                                                <span>Create Account</span>
                                             </button>
-
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="register-policy" required>
-                                                <label class="custom-control-label" for="register-policy">I agree to the <a href="#">privacy policy</a> *</label>
-                                            </div><!-- End .custom-checkbox -->
-                                        </div><!-- End .form-footer -->
+                                        </div>
                                     </form>
-                                </div><!-- .End .tab-pane -->
-                            </div><!-- End .tab-content -->
-                        </div><!-- End .form-tab -->
-                    </div><!-- End .form-box -->
-                </div><!-- End .modal-body -->
-            </div><!-- End .modal-content -->
-        </div><!-- End .modal-dialog -->
-    </div><!-- End .modal -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- End .modal -->
 
     <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>

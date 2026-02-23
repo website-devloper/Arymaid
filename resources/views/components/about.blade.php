@@ -21,12 +21,12 @@
                     <div class="row">
                         <div class="col-lg-6 mb-3 mb-lg-0">
                             <h2 class="title">Our Vision</h2><!-- End .title -->
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. </p>
+                            <p>To be the premier destination for sophisticated home essentials, blending timeless elegance with modern functionality to enrich every living space with a touch of luxury.</p>
                         </div><!-- End .col-lg-6 -->
                         
                         <div class="col-lg-6">
                             <h2 class="title">Our Mission</h2><!-- End .title -->
-                            <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. <br>Praesent elementum hendrerit tortor. Sed semper lorem at felis. </p>
+                            <p>To provide our customers with an curated selection of high-quality products that inspire comfort and beauty, supported by exceptional service and a commitment to excellence in everything we do.</p>
                         </div><!-- End .col-lg-6 -->
                     </div><!-- End .row -->
 
@@ -38,8 +38,8 @@
                         <div class="row">
                             <div class="col-lg-5 mb-3 mb-lg-0">
                                 <h2 class="title">Who We Are</h2><!-- End .title -->
-                                <p class="lead text-primary mb-3">Pellentesque odio nisi, euismod pharetra a ultricies <br>in diam. Sed arcu. Cras consequat</p><!-- End .lead text-primary -->
-                                <p class="mb-2">Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Suspendisse potenti. Sed egestas, ante et vulputate volutpat, uctus metus libero eu augue. </p>
+                                <p class="lead text-primary mb-3">Arymaid is more than just a store; it's a curated experience designed for those who appreciate the finer things in life.</p><!-- End .lead text-primary -->
+                                <p class="mb-2">Founded on the principles of quality, elegance, and service, we bring together a world-class selection of home essentials. Each item in our collection is chosen with care to ensure it meets our rigorous standards for style and durability.</p>
 
                                 <a href="blog.html" class="btn btn-sm btn-minwidth btn-outline-primary-2">
                                     <span>VIEW OUR NEWS</span>

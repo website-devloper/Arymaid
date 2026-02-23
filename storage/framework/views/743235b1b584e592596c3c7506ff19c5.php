@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Arymaid Store - Premium Household Essentials</title>
-    <meta name="keywords" content="HTML5 Template">
-    <meta name="description" content="Arymaid Store - Premium Household Essentials">
-    <meta name="author" content="p-themes">
+    <title>Arymaid | Premium E-commerce Experience</title>
+    <meta name="keywords" content="Arymaid, E-commerce, Premium Home Goods">
+    <meta name="description" content="Arymaid Store - Your destination for premium household essentials.">
+    <meta name="author" content="Arymaid Team">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png">
@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/skins/skin-demo-14.css">
     <link rel="stylesheet" href="assets/css/demos/demo-14.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
     
 
 
