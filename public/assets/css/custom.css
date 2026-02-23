@@ -1,0 +1,68 @@
+:root {
+    --primary-color: #064e3b; /* Emerald Green */
+    --primary-hover: #065f46;
+    --accent-color: #af944d; /* Soft Gold */
+    --accent-hover: #c5a95d;
+    --bg-light: #f8fafc; /* Cream/Off-white */
+    --text-main: #1e293b;
+}
+
+/* Global Overrides */
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Primary Button Overrides */
+.btn-primary, .btn-outline-primary-2 {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #fff !important;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-outline-primary-2:hover {
+    background-color: var(--primary-hover) !important;
+    border-color: var(--primary-hover) !important;
+}
+
+.btn-outline-primary-2 {
+    background-color: transparent !important;
+    color: var(--primary-color) !important;
+}
+
+.btn-outline-primary-2:hover {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+
+/* Text and Links */
+a {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+/* Custom Accents */
+.product-price {
+    color: var(--accent-color) !important;
+    font-weight: 700;
+}
+
+.wishlist-count, .cart-count {
+    background-color: var(--accent-color) !important;
+}
+
+/* Header Adjustments */
+.header-middle {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.logo img {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(23%) find(16%) find(53%) find(45%); /* Adjust logo color if needed */
+}

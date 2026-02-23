@@ -46,21 +46,21 @@
                                             <div class="flex-box">
                                                <div class="left">
                                                     <div class="big-img">
-                                                        <img src="{{asset('/productsImage/'.$SingleProduit->image)}}" alt="product-img">
+                                                        <img src="<?php echo e(asset('/productsImage/'.$SingleProduit->image)); ?>" alt="product-img">
                                                     </div>
                                                     <div class="images">
 
                                                     <div class="small-img">
-                                                        <img src="{{asset('/productsHoverImage/'.$SingleProduit->hoverImg)}}" alt="second_img" onclick="showImg(this.src)" >
+                                                        <img src="<?php echo e(asset('/productsHoverImage/'.$SingleProduit->hoverImg)); ?>" alt="second_img" onclick="showImg(this.src)" >
                                                     </div>
                                                     <div class="small-img">
-                                                        <img src="{{asset('/productsHoverImage/'.$SingleProduit->hoverImg)}}" alt="third_img" onclick="showImg(this.src)">
+                                                        <img src="<?php echo e(asset('/productsHoverImage/'.$SingleProduit->hoverImg)); ?>" alt="third_img" onclick="showImg(this.src)">
                                                     </div>
                                                     <div class="small-img">
-                                                        <img src="{{asset('/productsHoverImage/'.$SingleProduit->hoverImg)}}" alt="fourth_img" onclick="showImg(this.src)">
+                                                        <img src="<?php echo e(asset('/productsHoverImage/'.$SingleProduit->hoverImg)); ?>" alt="fourth_img" onclick="showImg(this.src)">
                                                     </div>
                                                     <div class="small-img">
-                                                        <img src="{{asset('/productsHoverImage/'.$SingleProduit->hoverImg)}}" alt="fiveth_img" onclick="showImg(this.src)">
+                                                        <img src="<?php echo e(asset('/productsHoverImage/'.$SingleProduit->hoverImg)); ?>" alt="fiveth_img" onclick="showImg(this.src)">
                                                     </div>
                                                 </div>
                                                 </div>
@@ -88,15 +88,15 @@
 
                             <div class="col-md-6">
                                 <div class="product-details">
-                                    <h1 class="product-title">{{$SingleProduit->name}}</h1><!-- End .product-title -->
+                                    <h1 class="product-title"><?php echo e($SingleProduit->name); ?></h1><!-- End .product-title -->
 
 
                                     <div class="product-price">
-                                               {{$SingleProduit->price}}DH
+                                               <?php echo e($SingleProduit->price); ?>DH
                                     </div><!-- End .product-price -->
 
                                     <div class="product-content">
-                                        <p>{{$SingleProduit->utilisation}}</p>
+                                        <p><?php echo e($SingleProduit->utilisation); ?></p>
                                     </div><!-- End .product-content -->
 
                                     <div class="details-filter-row details-row-size">
@@ -107,11 +107,11 @@
                                     </div><!-- End .details-filter-row -->
 
                                     <div class="product-details-action">
-                                        <a href="/cart/{{$SingleProduit->id}}" class="btn-product btn-cart"><span>add to cart</span></a>
+                                        <a href="/cart/<?php echo e($SingleProduit->id); ?>" class="btn-product btn-cart"><span>add to cart</span></a>
 
                                         <div class="details-action-wrapper">
-                                            <a href="/wishlist/{{$SingleProduit->id}}" class="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist</span></a>
-                                            <a href="/compare/{{$SingleProduit->id}}" class="btn-product btn-compare" title="Compare"><span>Add to Compare</span></a>
+                                            <a href="/wishlist/<?php echo e($SingleProduit->id); ?>" class="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist</span></a>
+                                            <a href="/compare/<?php echo e($SingleProduit->id); ?>" class="btn-product btn-compare" title="Compare"><span>Add to Compare</span></a>
                                         </div><!-- End .details-action-wrapper -->
                                     </div><!-- End .product-details-action -->
 
@@ -119,7 +119,7 @@
                                         <div class="product-cat">
                                             <span>Category:</span>
                                            
-                                            <a>{{$SingleProduit->categorie}}</a>
+                                            <a><?php echo e($SingleProduit->categorie); ?></a>
                                         </div><!-- End .product-cat -->
 
                                         <div class="social-icons social-icons-sm">
@@ -147,8 +147,8 @@
                             <div class="tab-pane fade show active" id="product-desc-tab" role="tabpanel" aria-labelledby="product-desc-link">
                                 <div class="product-desc-content">
                                     <h3>Product Information</h3>
-                                    <p>{{$SingleProduit->description}}</p>
-                                    <p>{{$SingleProduit->description2}}</p>
+                                    <p><?php echo e($SingleProduit->description); ?></p>
+                                    <p><?php echo e($SingleProduit->description2); ?></p>
 
                                 </div><!-- End .product-desc-content -->
                             </div><!-- .End .tab-pane -->
@@ -157,4 +157,4 @@
                     </div><!-- End .owl-carousel -->
                 </div><!-- End .container -->
             </div><!-- End .page-content -->
-        </main><!-- End .main -->
+        </main><!-- End .main --><?php /**PATH C:\Users\Mikasa Ackerman\arymaid\Arymaid\resources\views/components/singleProduct.blade.php ENDPATH**/ ?>

@@ -189,10 +189,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 priceSlider.noUiSlider.on('update', function(values, handle) {
                     var min = values[0].replace(/[^0-9]/g, '');
                     var max = values[1].replace(/[^0-9]/g, '');
-                    document.getElementById('min-price-hidden').value = min;
-                    document.getElementById('max-price-hidden').value = max;
+                    document.getElementById('min-price-input').value = min;
+                    document.getElementById('max-price-input').value = max;
                 });
-                priceSlider.noUiSlider.set([{{ request('min_price', 0) }}, {{ request('max_price', 1000) }}]);
+                priceSlider.noUiSlider.set([{{ request('min_price', 0) }}, {{ request('max_price', 500) }}]);
+
+                document.getElementById('min-price-input').onchange = function() {
+                    priceSlider.noUiSlider.set([this.value, null]);
+                };
+                document.getElementById('max-price-input').onchange = function() {
+                    priceSlider.noUiSlider.set([null, this.value]);
+                };
             }
         }
     }, 100);

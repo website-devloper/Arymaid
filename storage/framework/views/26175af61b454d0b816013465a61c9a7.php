@@ -152,16 +152,20 @@
 									<div class="collapse show" id="widget-5">
 										<div class="widget-body">
                                             <div class="filter-price">
-                                                <div class="filter-price-text">
-                                                    Price Range:
-                                                    <span id="filter-price-range"></span>
-                                                </div><!-- End .filter-price-text -->
-
-                                                <div id="price-slider"></div><!-- End #price-slider -->
-                                                <input type="hidden" name="min_price" id="min-price-hidden" value="<?php echo e(request('min_price', 0)); ?>">
-                                                <input type="hidden" name="max_price" id="max-price-hidden" value="<?php echo e(request('max_price', 1000)); ?>">
+                                                <div id="price-slider" class="mb-3"></div><!-- End #price-slider -->
                                                 
-                                                <button type="submit" class="btn btn-primary btn-block mt-2">Filter</button>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <label>Min</label>
+                                                        <input type="number" name="min_price" id="min-price-input" class="form-control" value="<?php echo e(request('min_price', 0)); ?>" placeholder="Min">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label>Max</label>
+                                                        <input type="number" name="max_price" id="max-price-input" class="form-control" value="<?php echo e(request('max_price', 500)); ?>" placeholder="Max">
+                                                    </div>
+                                                </div>
+                                                
+                                                <button type="submit" class="btn btn-primary btn-block mt-3">Apply Price Filter</button>
                                             </div><!-- End .filter-price -->
 										</div><!-- End .widget-body -->
 									</div><!-- End .collapse -->
@@ -185,10 +189,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 priceSlider.noUiSlider.on('update', function(values, handle) {
                     var min = values[0].replace(/[^0-9]/g, '');
                     var max = values[1].replace(/[^0-9]/g, '');
-                    document.getElementById('min-price-hidden').value = min;
-                    document.getElementById('max-price-hidden').value = max;
+                    document.getElementById('min-price-input').value = min;
+                    document.getElementById('max-price-input').value = max;
                 });
-                priceSlider.noUiSlider.set([<?php echo e(request('min_price', 0)); ?>, <?php echo e(request('max_price', 1000)); ?>]);
+                priceSlider.noUiSlider.set([<?php echo e(request('min_price', 0)); ?>, <?php echo e(request('max_price', 500)); ?>]);
+
+                document.getElementById('min-price-input').onchange = function() {
+                    priceSlider.noUiSlider.set([this.value, null]);
+                };
+                document.getElementById('max-price-input').onchange = function() {
+                    priceSlider.noUiSlider.set([null, this.value]);
+                };
             }
         }
     }, 100);

@@ -101,5 +101,8 @@ class ProduitSeeder extends Seeder
         foreach ($products as $product) {
             produit::create($product);
         }
+
+        // Generate additional 144 products to reach 150 total
+        produit::factory(144)->create();
     }
 }

@@ -14,11 +14,8 @@
                     <div class="row">
                         <div class="col-sm-12 col-lg-4">
                             <div class="widget widget-about">
-                                <img src="assets/images/demos/demo-14/logo-footer.png" class="footer-logo"
-                                    alt="Footer Logo" width="105" height="25">
-                                <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate
-                                    magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
-                                    porttitor, facilisis luctus, metus. </p>
+                                <h2 style="color: var(--primary-color); font-weight: 800; font-size: 2rem; margin-bottom: 1.5rem;">ARYMAID</h2>
+                                <p>Premium household essentials curated for your comfort. Arymaid brings you the finest quality products with a touch of elegance and durability. </p>
 
                                 <div class="widget-about-info">
                                     <div class="row">

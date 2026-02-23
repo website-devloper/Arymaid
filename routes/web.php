@@ -7,6 +7,7 @@ use App\Http\Controllers\wishlistController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProduitsController;
 use App\Http\Controllers\CheckOutController;
+use App\Http\Controllers\CompareController;
 
 
 
@@ -39,7 +40,7 @@ Route::get('/signin-modal',[HomeController::class,'SigninModal']);
 
 Route::get('/checkout',[HomeController::class,'Checkout']);
 
-Route::get('/postLogin',[CostumAuthController::class,'Login'])->name('postLogin');
+Route::post('/postLogin',[CostumAuthController::class,'Login'])->name('postLogin');
 
 Route::post('/postRegister',[CostumAuthController::class,'Register'])->name('postRegister');
 
@@ -75,3 +76,13 @@ Route::get('/checkout/store',[CheckOutController::class,'CheckOut']);
 
 
 Route::get('/singleProduct/{id}',[ProduitsController::class,'show']);
+
+// COMPARE ROUTES---------------------------------------------
+
+Route::get('/compare',[CompareController::class,'index']);
+
+Route::get('/compare/{idProduct}',[CompareController::class,'store']);
+
+Route::get('/deleteCompare/{idProduct}',[CompareController::class,'destroy']);
+
+// END COMPARE ROUTES---------------------------------------------

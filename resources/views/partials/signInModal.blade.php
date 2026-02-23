@@ -20,7 +20,7 @@
                                 <!-- ##########################################################################################################################################3
                             ############################################################   LOGIN USER    ################################################################## -->
                                 <div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
-                                    <form action="{{route('postLogin')}}" method="GET">
+                                    <form action="{{route('postLogin')}}" method="POST">
                                         @csrf
 
 

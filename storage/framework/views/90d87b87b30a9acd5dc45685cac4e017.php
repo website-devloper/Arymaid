@@ -295,6 +295,8 @@
                                                         wishlist</span></button>
                                             </form>
                                             <!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
+                                            <a href="/compare/<?php echo e($Lproduct->id); ?>" class="btn-product-icon"
+                                                title="Compare"><i class="icon-random"></i><span>Compare</span></a>
                                             <a href="/singleProduct/<?php echo e($Lproduct->id); ?>" class="btn-product-icon"
                                                 title="Quick view"><i class="fa-regular fa-eye"></i><span>Quick
                                                     view</span></a>
@@ -366,6 +368,8 @@
                                                     class="btn-product-icon btn-wishlist btn-expandable"><span>add to
                                                         wishlist</span></button>
                                             </form>
+                                                    <a href="/compare/<?php echo e($product->id); ?>" class="btn-product-icon"
+                                                title="Compare"><i class="icon-random"></i><span>Compare</span></a>
                                                     <a href="/singleProduct/<?php echo e($product->id); ?>" class="btn-product-icon"
                                                 title="Quick view"><i class="fa-regular fa-eye"></i><span>Quick
                                                     view</span></a>

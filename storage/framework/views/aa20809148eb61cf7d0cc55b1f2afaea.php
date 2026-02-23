@@ -49,23 +49,23 @@
 
                                 <div class="col-lg-4 col-xxl-5col d-flex justify-content-end align-items-center">
                                     <div class="header-dropdown-link">
-                                        <!-- ##############################################################################
-                                    ######################################################################################
-                                ####################################################################################### -->
-                                        <a href="/wishlist/<?php echo e(session('id')); ?>/products" class="wishlist-link">
+                                        <a href="/compare" class="wishlist-link" title="Compare">
+                                            <i class="icon-random"></i>
+                                            <span class="wishlist-count"><?php echo e($compareCount); ?></span>
+                                            <span class="wishlist-txt">Compare</span>
+                                        </a>
+
+                                        <a href="/wishlist/<?php echo e(session('id') ?? 'guest'); ?>/products" class="wishlist-link">
                                             <i class="icon-heart-o"></i>
-                                            <span class="wishlist-count">3</span>
+                                            <span class="wishlist-count"><?php echo e($wishlistCount); ?></span>
                                             <span class="wishlist-txt">Wishlist</span>
                                         </a>
-                                        <!-- ###################################################################
-                                    ##########################################################################
-                                ############################################################################## -->
 
                                         <div class="dropdown cart-dropdown">
-                                            <a href="/cart/<?php echo e(session('id')); ?>/products" class="dropdown-toggle" role="button" data-toggle="dropdown"
+                                            <a href="/cart/<?php echo e(session('id') ?? 'guest'); ?>/products" class="dropdown-toggle" role="button" data-toggle="dropdown"
                                                 aria-haspopup="true" aria-expanded="false" data-display="static">
                                                 <i class="icon-shopping-cart"></i>
-                                                <span class="cart-count">2</span>
+                                                <span class="cart-count"><?php echo e(count($data)); ?></span>
                                                 <span class="cart-txt">Cart</span>
                                             </a>
 
@@ -105,7 +105,7 @@
                                                 </div><!-- End .dropdown-cart-total -->
 
                                                 <div class="dropdown-cart-action">
-                                                    <a href="/cart/<?php echo e(session('id')); ?>/products" class="btn btn-primary">View Cart</a>
+                                                    <a href="/cart/<?php echo e(session('id') ?? 'guest'); ?>/products" class="btn btn-primary">View Cart</a>
                                                     <a href="checkout"
                                                         class="btn btn-outline-primary-2"><span>Checkout</span><i
                                                             class="icon-long-arrow-right"></i></a>

@@ -17,6 +17,16 @@ class CategorieSeeder extends Seeder
             ['type' => 'Housekeeping'],
             ['type' => 'Laundry & Ironing'],
             ['type' => 'Home Essentials'],
+            ['type' => 'Personal Care'],
+            ['type' => 'Kitchenware'],
+            ['type' => 'Storage & Organization'],
+            ['type' => 'Gardening Gear'],
+            ['type' => 'Office Supplies'],
+            ['type' => 'Pet Care'],
+            ['type' => 'Baby Essentials'],
+            ['type' => 'Tech Accessories'],
+            ['type' => 'Outdoor Living'],
+            ['type' => 'Fashion & Apparel'],
         ];
 
         foreach ($categories as $cat) {

@@ -20,9 +20,26 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('partials.header', function ($view) {
-            $data = CartController::cart_view()['CartsByUser'];
-            $total = CartController::cart_view()['totalPrice'];
-            $view->with(['data' => $data, 'total' => $total]);
+            $cartData = CartController::cart_view();
+            $data = $cartData['CartsByUser'];
+            $total = $cartData['totalPrice'];
+            
+            // Wishlist count
+            $userId = session('id');
+            if ($userId) {
+                $wishlistCount = \App\Models\wishlist::where('user_id', $userId)->count();
+                $compareCount = \App\Models\compare::where('user_id', $userId)->count();
+            } else {
+                $wishlistCount = count(session('guest_wishlist', []));
+                $compareCount = count(session('guest_compare', []));
+            }
+
+            $view->with([
+                'data' => $data, 
+                'total' => $total,
+                'wishlistCount' => $wishlistCount,
+                'compareCount' => $compareCount
+            ]);
         });
     }
     
