@@ -62,17 +62,21 @@
                                     <div class="col-6 col-md-4 col-lg-4 col-xl-3">
                                         <div class="product product-7 text-center">
                                             <figure class="product-media">
-                                                <a href="product.html">
+                                                <a href="/singleProduct/<?php echo e($produit->id); ?>">
                                                     <img src="<?php echo e(asset('/productsImage/'.$produit->image)); ?>" alt="Product image" class="product-image">
                                                 </a>
 
                                                 <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
+                                                    <form action="/wishlist/<?php echo e($produit->id); ?>" method="GET">
+                                                        <?php echo csrf_field(); ?>
+                                                        <button type="submit" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></button>
+                                                    </form>
+                                                    <a href="/compare/<?php echo e($produit->id); ?>" class="btn-product-icon" title="Compare"><i class="icon-random"></i><span>Compare</span></a>
                                                     <a href="/singleProduct/<?php echo e($produit->id); ?>" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                                                 </div><!-- End .product-action-vertical -->
 
                                                 <div class="product-action">
-                                                    <a href="" class="btn-product btn-cart"><span>add to cart</span></a>
+                                                    <a href="/cart/<?php echo e($produit->id); ?>" class="btn-product btn-cart"><span>add to cart</span></a>
                                                 </div><!-- End .product-action -->
                                             </figure><!-- End .product-media -->
 
@@ -80,7 +84,7 @@
                                                 <div class="product-cat">
                                                     <a href="/products/<?php echo e($produit->categorie_id); ?>"><?php echo e($produit->categorie_rel->type); ?></a>
                                                 </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a href="product.html"><?php echo e($produit->name); ?></a></h3><!-- End .product-title -->
+                                                <h3 class="product-title"><a href="/singleProduct/<?php echo e($produit->id); ?>"><?php echo e($produit->name); ?></a></h3><!-- End .product-title -->
                                                 <div class="product-price">
                                                    <?php echo e($produit->price); ?> DH
                                                 </div><!-- End .product-price -->

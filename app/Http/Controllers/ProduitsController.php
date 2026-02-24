@@ -82,7 +82,14 @@ class ProduitsController extends Controller
 
     public function show(string $id)
     {
-        $SingleProduit=produit::FindOrFail($id);
-        return view('components.singleProduct',compact('SingleProduit'));
+        $SingleProduit = produit::with('categorie_rel')->findOrFail($id);
+        
+        $relatedProducts = produit::with('categorie_rel')
+            ->where('categorie_id', $SingleProduit->categorie_id)
+            ->where('id', '!=', $id)
+            ->limit(4)
+            ->get();
+            
+        return view('components.singleProduct', compact('SingleProduit', 'relatedProducts'));
     }
 }

@@ -30,7 +30,7 @@
                                     Exclusive Collections 2026
                                 </div><!-- End .intro-text -->
 
-                                <a href="category.html" class="btn btn-primary">
+                                <a href="/products" class="btn btn-primary">
                                     <span>Discover Now</span>
                                     <i class="icon-long-arrow-right"></i>
                                 </a>
@@ -59,7 +59,7 @@
                                     </span>
                                 </div><!-- End .intro-price -->
 
-                                <a href="category.html" class="btn btn-primary">
+                                <a href="/products" class="btn btn-primary">
                                     <span>Discover Here</span>
                                     <i class="icon-long-arrow-right"></i>
                                 </a>
@@ -86,7 +86,7 @@
                                     Summer Collection 2026
                                 </div><!-- End .intro-text -->
 
-                                <a href="category.html" class="btn btn-primary">
+                                <a href="/products" class="btn btn-primary">
                                     <span>Discover Now</span>
                                     <i class="icon-long-arrow-right"></i>
                                 </a>
@@ -107,7 +107,7 @@
                         <div class="price text-center">
                             <sup class="text-white">from</sup>
                             <span class="text-white">
-                                <strong>$199</strong><sup class="text-white">,99</sup>
+                                <strong>1999</strong><sup class="text-white">.00 DH</sup>
                             </span>
                         </div>
                         <a href="#" class="banner-link">Discover Now <i class="icon-long-arrow-right"></i></a>
@@ -135,7 +135,7 @@
                                         <h3 class="banner-title text-white"><a href="#">Detox And Beautify
                                                 <br>For Spring <br><span>Up To 20% Off</span></a></h3>
                                         <!-- End .banner-title -->
-                                        <a href="#" class="banner-link">Shop Now <i
+                                        <a href="/products" class="banner-link">Shop Now <i
                                                 class="icon-long-arrow-right"></i></a>
                                     </div><!-- End .banner-content -->
                                 </div><!-- End .banner -->
@@ -153,7 +153,7 @@
                                                 Day</a></h4><!-- End .banner-subtitle -->
                                         <h3 class="banner-title text-white"><a href="#">Headphones <br><span>Up
                                                     To 30% Off</span></a></h3><!-- End .banner-title -->
-                                        <a href="#" class="banner-link">Shop Now <i
+                                        <a href="/products" class="banner-link">Shop Now <i
                                                 class="icon-long-arrow-right"></i></a>
                                     </div><!-- End .banner-content -->
                                 </div><!-- End .banner banner-overlay -->
@@ -172,7 +172,7 @@
                                 <!-- End .banner-subtitle -->
                                 <h3 class="banner-title text-white"><a href="#">Seating and Tables Clearance</a>
                                 </h3><!-- End .banner-title -->
-                                <a href="#" class="banner-link">Shop Now <i class="icon-long-arrow-right"></i></a>
+                                <a href="/products" class="banner-link">Shop Now <i class="icon-long-arrow-right"></i></a>
                             </div><!-- End .banner-content -->
                         </div><!-- End .banner banner-overlay -->
                     </div><!-- End .col-lg-3 col-xxl-2 -->
@@ -312,7 +312,7 @@
                                         <div class="product-cat">
                                             <a><?php echo e($Lproduct->categorie_rel->type); ?></a>
                                         </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="product.html"><?php echo e($Lproduct->name); ?></a></h3>
+                                        <h3 class="product-title"><a href="/singleProduct/<?php echo e($Lproduct->id); ?>"><?php echo e($Lproduct->name); ?></a></h3>
                                         <!-- End .product-title -->
                                         <div class="product-price">
                                             <?php echo e($Lproduct->price); ?> DH
@@ -336,19 +336,11 @@
                     </div><!-- End .tab-content -->
                 </div><!-- End .bg-lighter -->
 
-                <!-- ###################################################################################
-                    ##############################################################################################
-                ################################################################################################ -->
 
-
-
-
-<br>
-<br><br>
-<br><br>
-<div class="heading-left">
-                            <h2 class="title">Featured Products</h2><!-- End .title -->
-                        </div><!-- End .heading-left -->
+                <div class="mb-5"></div>
+                <div class="heading-left text-center mb-3">
+                    <h2 class="title">Featured Products</h2>
+                </div>
                 <div class="products mb-3">
                                 <div class="row justify-content-center">
 
@@ -382,7 +374,7 @@
 
                                             <div class="product-body">
                                                 <div class="product-cat">
-                                                    <a href="#"><?php echo e($product->categorie_rel->type); ?></a>
+                                                    <a href="/products/<?php echo e($product->categorie_rel->type); ?>"><?php echo e($product->categorie_rel->type); ?></a>
                                                 </div><!-- End .product-cat -->
                                                 <h3 class="product-title"><a><?php echo e($product->name); ?></a></h3><!-- End .product-title -->
                                                 <div class="product-price">

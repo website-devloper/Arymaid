@@ -1,35 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <!-- Main CSS File -->
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/custom.css">
-</head>
+@extends('layouts.masterHome')
 
-<body>
-    @include('partials.topheader')
-    @include('partials.header')
-    @include('partials.headerMain')
+@section('content')
+<div class="page-wrapper">
+    <main class="main">
+        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+                </ol>
+            </div><!-- End .container -->
+        </nav><!-- End .breadcrumb-nav -->
 
-    <div class="page-wrapper">
-        <main class="main">
-            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="page-content">
+            <div class="cart">
                 <div class="container">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
-                    </ol>
-                </div><!-- End .container -->
-            </nav><!-- End .breadcrumb-nav -->
-
-            <div class="page-content">
-                <div class="cart">
-                    <div class="container">
+                    @if($CartsByUser->count() > 0)
                         <div class="row">
                             <div class="col-lg-9">
                                 <table class="table table-cart table-mobile">
@@ -49,13 +35,13 @@
                                             <td class="product-col">
                                                 <div class="product">
                                                     <figure class="product-media">
-                                                        <a href="#">
+                                                        <a href="/singleProduct/{{$cart->id}}">
                                                             <img src="{{asset('/productsImage/'.$cart->image)}}" alt="Product image">
                                                         </a>
                                                     </figure>
 
                                                     <h3 class="product-title">
-                                                        <a href="#">{{$cart->name}}</a>
+                                                        <a href="/singleProduct/{{$cart->id}}">{{$cart->name}}</a>
                                                     </h3><!-- End .product-title -->
                                                 </div><!-- End .product -->
                                             </td>
@@ -134,7 +120,7 @@
                                             </tr><!-- End .summary-shipping-row -->
 
                                             <tr class="summary-shipping-estimate">
-                                                <td>Estimate for Your Country<br> <a href="dashboard.html">Change address</a></td>
+                                                <td>Estimate for Your Country<br> <a href="#">Change address</a></td>
                                                 <td>&nbsp;</td>
                                             </tr><!-- End .summary-shipping-estimate -->
 
@@ -148,26 +134,20 @@
                                     <a href="/checkout" class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO CHECKOUT</a>
                                 </div><!-- End .summary -->
 
-                                <a href="category.html" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i class="icon-refresh"></i></a>
+                                <a href="/products" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i class="icon-refresh"></i></a>
                             </aside><!-- End .col-lg-3 -->
                         </div><!-- End .row -->
-                    </div><!-- End .container -->
-                </div><!-- End .cart -->
-            </div><!-- End .page-content -->
-        </main><!-- End .main -->
-
-        @include('partials.footer')
-    </div><!-- End .page-wrapper -->
-
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/jquery.hoverIntent.min.js"></script>
-    <script src="/assets/js/jquery.waypoints.min.js"></script>
-    <script src="/assets/js/superfish.min.js"></script>
-    <script src="/assets/js/owl.carousel.min.js"></script>
-    <script src="/assets/js/bootstrap-input-spinner.js"></script>
-    <!-- Main JS File -->
-    <script src="/assets/js/main.js"></script>
-</body>
-
-</html>
+                    @else
+                        <div class="text-center py-5">
+                            <i class="icon-shopping-cart mb-2" style="font-size: 5rem; color: #ccc; display: block;"></i>
+                            <h3 class="mb-2">Your cart is empty</h3>
+                            <p class="mb-4">No products added to the cart.</p>
+                            <a href="/products" class="btn btn-primary"><span>RETURN TO SHOP</span><i class="icon-long-arrow-right"></i></a>
+                        </div>
+                    @endif
+                </div><!-- End .container -->
+            </div><!-- End .cart -->
+        </div><!-- End .page-content -->
+    </main><!-- End .main -->
+</div><!-- End .page-wrapper -->
+@endsection

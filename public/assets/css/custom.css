@@ -186,6 +186,48 @@ a:hover {
     color: #fff !important;
 }
 
+/* Product Detail Action Buttons (Wishlist/Compare) */
+.product-details .btn-wishlist,
+.product-details .btn-compare {
+    color: var(--primary-color) !important;
+    background-color: transparent !important;
+    border: none !important;
+    font-size: 1.4rem !important;
+    font-weight: 500 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0 !important;
+    margin-right: 2rem !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase;
+}
+
+.product-details .btn-wishlist span,
+.product-details .btn-compare span {
+    color: var(--primary-color) !important;
+}
+
+.product-details .btn-wishlist:hover,
+.product-details .btn-compare:hover,
+.product-details .btn-wishlist:hover span,
+.product-details .btn-compare:hover span {
+    color: var(--primary-hover) !important;
+    background-color: transparent !important;
+    text-decoration: underline !important;
+}
+
+.product-details .btn-wishlist::before,
+.product-details .btn-compare::before {
+    color: var(--primary-color) !important;
+    margin-right: 0.8rem !important;
+    font-size: 1.8rem !important;
+}
+
+.product-details .btn-wishlist:hover::before,
+.product-details .btn-compare:hover::before {
+    color: var(--primary-hover) !important;
+}
+
 /* Fix for icons inside action buttons */
 .btn-product-icon i {
     color: inherit !important;

@@ -2,14 +2,14 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-auto col-lg-3 col-xl-3 col-xxl-2 header-left">
-                            <div class="dropdown category-dropdown show is-on" data-visible="true">
+                            <div class="dropdown category-dropdown" data-visible="false">
                                 <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false" data-display="static"
                                     title="Browse Categories">
                                     Browse Categories
                                 </a>
 
-                                <div class="dropdown-menu show">
+                                <div class="dropdown-menu">
                                     <nav class="side-nav">
                                         <ul class="menu-vertical sf-arrows">
                                             <li class="megamenu-container">
@@ -156,16 +156,16 @@
                     <nav class="mobile-nav">
                         <ul class="mobile-menu">
                             <li class="active">
-                                <a href="index.html">Home</a>
+                                <a href="/">Home</a>
                             </li>
                             <li>
-                                <a href="category.html">Products</a>
+                                <a href="/products">Products</a>
                             </li>
                             <li>
-                                <a href="product.html" class="sf-with-ul">About</a>
+                                <a href="/about">About</a>
                             </li>
                             <li>
-                                <a href="#">Contact</a>
+                                <a href="/contact">Contact</a>
                             </li>
                             <li>
                                 <a href="blog.html">Blog</a>

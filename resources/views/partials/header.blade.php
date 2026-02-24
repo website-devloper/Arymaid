@@ -69,7 +69,7 @@
                                             <div class="product-cart-details">
                                                 <h4 class="product-title">
                                                     
-                                                    <a href="product.html">{{$d->name}}</a>
+                                                    <a href="/singleProduct/{{$d->id}}">{{$d->name}}</a>
                                                 </h4>
 
                                                 <span class="cart-product-info">
@@ -79,7 +79,7 @@
                                             </div><!-- End .product-cart-details -->
 
                                             <figure class="product-image-container">
-                                                <a href="product.html" class="product-image">
+                                                <a href="/singleProduct/{{$d->id}}" class="product-image">
                                                     <img src="{{asset('/productsImage/'.$d->image)}}"
                                                         alt="product">
                                                 </a>
@@ -99,7 +99,7 @@
 
                                     <div class="dropdown-cart-action">
                                         <a href="/cart/{{ session('id') ?? 'guest' }}/products" class="btn btn-primary">View Cart</a>
-                                        <a href="checkout"
+                                        <a href="/checkout"
                                             class="btn btn-outline-primary-2"><span>Checkout</span><i
                                                 class="icon-long-arrow-right"></i></a>
                                     </div><!-- End .dropdown-cart-total -->
