@@ -48,9 +48,15 @@ class ProduitsController extends Controller
         return view('components.products', compact('produits', 'categories'));
     }
 
-    public function ProductsBycategorie($id)
+    public function ProductsBycategorie($categorieName)
     {
-        return redirect()->route('products.index', ['category' => $id]);
+        $categorie = categorie::where('type', $categorieName)->first();
+
+        if (!$categorie) {
+            return redirect()->route('products.index');
+        }
+
+        return redirect()->route('products.index', ['category' => $categorie->id]);
     }
     
 

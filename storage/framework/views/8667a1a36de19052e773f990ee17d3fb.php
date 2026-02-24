@@ -1,7 +1,7 @@
-@include('partials.topheader')
-@include('partials.header')
-@include('partials.headerMain')
-@include('styles.styleContact')
+<?php echo $__env->make('partials.topheader', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('partials.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('partials.headerMain', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('styles.styleContact', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <main class="main">
             <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
@@ -247,8 +247,8 @@
             </div><!-- End .page-content -->
         </main><!-- End .main -->
 
-		@include('styles.styleHome')
-        @include('partials.footer')
+		<?php echo $__env->make('styles.styleHome', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div><!-- End .page-wrapper -->
 
     
@@ -264,4 +264,4 @@
 <script src="assets/js/superfish.min.js"></script>
 <script src="assets/js/owl.carousel.min.js"></script>
 <!-- Main JS File -->
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js"></script><?php /**PATH C:\Users\Mikasa Ackerman\arymaid\Arymaid\resources\views/components/contact.blade.php ENDPATH**/ ?>

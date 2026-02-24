@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="/assets/css/plugins/nouislider/nouislider.css">
 	
 <?php echo $__env->make('partials.topheader', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('partials.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('partials.headerMain', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+<div class="page-wrapper">
     <main class="main">
             <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
                 <div class="container">
@@ -18,22 +22,15 @@
                 </div><!-- End .container -->
             </nav><!-- End .breadcrumb-nav -->
 
-            <?php echo $__env->make('partials.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <div class="page-content">
                 <div class="container">
                 	<div class="row">
                 		<div class="col-lg-9">
                 			<div class="toolbox">
                 				<div class="toolbox-left">
-                                    <!--######################################
-                                        ######################################
-                                        ###################################### -->
                 					<div class="toolbox-info">
                 						Showing <span><?php echo e($produits->count()); ?> of <?php echo e($produits->total()); ?></span> Products
                 					</div><!-- End .toolbox-info -->
-                                    <!-- ############################################
-                                         ############################################
-                                         ############################################ -->
                 				</div><!-- End .toolbox-left -->
 
                 				<div class="toolbox-right">
@@ -51,12 +48,6 @@
                 					<div class="toolbox-layout">
                 						<a href="category-list.html" class="btn-layout">
                 						</a>
-
-                						
-
-                						
-
-                						
                 					</div><!-- End .toolbox-layout -->
                 				</div><!-- End .toolbox-right -->
                 			</div><!-- End .toolbox -->
@@ -77,7 +68,7 @@
 
                                                 <div class="product-action-vertical">
                                                     <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
-                                                    <a href="/singleProduct/{$produit->id}" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
+                                                    <a href="/singleProduct/<?php echo e($produit->id); ?>" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                                                 </div><!-- End .product-action-vertical -->
 
                                                 <div class="product-action">
@@ -132,7 +123,7 @@
 
 												<div class="filter-item">
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox" name="category[]" value="<?php echo e($categorie->id); ?>" class="custom-control-input" id="cat-<?php echo e($categorie->id); ?>" <?php echo e(is_array(request('category')) && in_array($categorie->id, request('category')) ? 'checked' : ''); ?>>
+														<input type="checkbox" name="category[]" value="<?php echo e($categorie->id); ?>" class="custom-control-input" id="cat-<?php echo e($categorie->id); ?>" <?php echo e(in_array($categorie->id, (array) request('category', [])) ? 'checked' : ''); ?>>
 														<label class="custom-control-label" for="cat-<?php echo e($categorie->id); ?>"><?php echo e($categorie->type); ?></label>
 													</div><!-- End .custom-checkbox -->
 													<span class="item-count">0</span>
@@ -178,7 +169,19 @@
                 	</div><!-- End .row -->
                 </div><!-- End .container -->
             </div><!-- End .page-content -->
-        </main><!-- End .main -->
+    </main><!-- End .main -->
+
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+</div><!-- End .page-wrapper -->
+
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/js/jquery.hoverIntent.min.js"></script>
+<script src="/assets/js/jquery.waypoints.min.js"></script>
+<script src="/assets/js/superfish.min.js"></script>
+<script src="/assets/js/owl.carousel.min.js"></script>
+<!-- Main JS File -->
+<script src="/assets/js/main.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -211,4 +214,5 @@ function submitSorting(val) {
     document.getElementById('filter-form').submit();
 }
 </script>
+
 <?php /**PATH C:\Users\Mikasa Ackerman\arymaid\Arymaid\resources\views/components/products.blade.php ENDPATH**/ ?>

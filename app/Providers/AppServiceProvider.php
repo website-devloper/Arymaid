@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer('partials.header', function ($view) {
+        View::composer(['partials.header', 'partials.headerMain'], function ($view) {
             $cartData = CartController::cart_view();
             $data = $cartData['CartsByUser'];
             $total = $cartData['totalPrice'];
@@ -34,11 +34,14 @@ class AppServiceProvider extends ServiceProvider
                 $compareCount = count(session('guest_compare', []));
             }
 
+            $categories = \App\Models\categorie::all();
+
             $view->with([
                 'data' => $data, 
                 'total' => $total,
                 'wishlistCount' => $wishlistCount,
-                'compareCount' => $compareCount
+                'compareCount' => $compareCount,
+                'categories' => $categories
             ]);
         });
     }

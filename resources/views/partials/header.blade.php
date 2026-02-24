@@ -37,16 +37,22 @@
 
                     <div class="col-lg-4 col-xxl-5col d-flex justify-content-end align-items-center">
                         <div class="header-dropdown-link">
+
+                            @if(session('id'))
+                                <a href="{{ route('LogOut') }}" class="header-auth-link"><i class="icon-user"></i> Sign Out</a>
+                            @else
+                                <a href="{{ route('login') }}" class="header-auth-link"><i class="icon-user"></i> Sign In</a>
+                                <a href="{{ route('register') }}" class="header-auth-link">Register</a>
+                            @endif
+
                             <a href="/compare" class="wishlist-link" title="Compare">
                                 <i class="icon-random"></i>
                                 <span class="wishlist-count">{{ $compareCount }}</span>
-                                <span class="wishlist-txt">Compare</span>
                             </a>
 
-                            <a href="/wishlist/{{ session('id') ?? 'guest' }}/products" class="wishlist-link">
+                            <a href="/wishlist/{{ session('id') ?? 'guest' }}/products" class="wishlist-link" title="Wishlist">
                                 <i class="icon-heart-o"></i>
                                 <span class="wishlist-count">{{ $wishlistCount }}</span>
-                                <span class="wishlist-txt">Wishlist</span>
                             </a>
 
                             <div class="dropdown cart-dropdown">
@@ -54,7 +60,6 @@
                                     aria-haspopup="true" aria-expanded="false" data-display="static">
                                     <i class="icon-shopping-cart"></i>
                                     <span class="cart-count">{{ count($data) }}</span>
-                                    <span class="cart-txt">Cart</span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right">

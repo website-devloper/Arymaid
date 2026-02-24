@@ -1,4 +1,6 @@
 @include('partials.topheader')
+@include('partials.header')
+@include('partials.headerMain')
 @include('styles.styleAbout')
     <div class="page-wrapper">
         <main class="main">
@@ -11,8 +13,8 @@
                 </div><!-- End .container -->
             </nav><!-- End .breadcrumb-nav -->
             <div class="container">
-	        	<div class="page-header page-header-big text-center" style="background-image: url('assets/images/about-header-bg.jpg')">
-        			<h1 class="page-title text-white">About us<span class="text-white">Who we are</span></h1>
+	        	<div class="page-header page-header-big text-center" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80')">
+        			<h1 class="page-title text-white">About us<span class="text-white">Crafting Elegance Since 2010</span></h1>
 	        	</div><!-- End .page-header -->
             </div><!-- End .container -->
 
@@ -20,12 +22,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 mb-3 mb-lg-0">
-                            <h2 class="title">Our Vision</h2><!-- End .title -->
+                            <h2 class="title text-primary">Our Vision</h2><!-- End .title -->
                             <p>To be the premier destination for sophisticated home essentials, blending timeless elegance with modern functionality to enrich every living space with a touch of luxury.</p>
                         </div><!-- End .col-lg-6 -->
                         
                         <div class="col-lg-6">
-                            <h2 class="title">Our Mission</h2><!-- End .title -->
+                            <h2 class="title text-primary">Our Mission</h2><!-- End .title -->
                             <p>To provide our customers with an curated selection of high-quality products that inspire comfort and beauty, supported by exceptional service and a commitment to excellence in everything we do.</p>
                         </div><!-- End .col-lg-6 -->
                     </div><!-- End .row -->
@@ -37,27 +39,107 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-5 mb-3 mb-lg-0">
-                                <h2 class="title">Who We Are</h2><!-- End .title -->
-                                <p class="lead text-primary mb-3">Arymaid is more than just a store; it's a curated experience designed for those who appreciate the finer things in life.</p><!-- End .lead text-primary -->
+                                <h2 class="title text-primary">Who We Are</h2><!-- End .title -->
+                                <p class="lead text-primary mb-3" style="color: var(--primary-color) !important;">Arymaid is more than just a store; it's a curated experience designed for those who appreciate the finer things in life.</p><!-- End .lead text-primary -->
                                 <p class="mb-2">Founded on the principles of quality, elegance, and service, we bring together a world-class selection of home essentials. Each item in our collection is chosen with care to ensure it meets our rigorous standards for style and durability.</p>
 
-                                <a href="blog.html" class="btn btn-sm btn-minwidth btn-outline-primary-2">
-                                    <span>VIEW OUR NEWS</span>
+                                <a href="/products" class="btn btn-sm btn-minwidth btn-outline-primary-2">
+                                    <span>EXPLORE OUR COLLECTION</span>
                                     <i class="icon-long-arrow-right"></i>
                                 </a>
                             </div><!-- End .col-lg-5 -->
 
                             <div class="col-lg-6 offset-lg-1">
                                 <div class="about-images">
-                                    <img src="assets/images/about/img-1.jpg" alt="" class="about-img-front">
-                                    <img src="assets/images/about/img-2.jpg" alt="" class="about-img-back">
+                                    <img src="https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&w=800&q=80" alt="" class="about-img-front">
+                                    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=800&q=80" alt="" class="about-img-back">
                                 </div><!-- End .about-images -->
                             </div><!-- End .col-lg-6 -->
                         </div><!-- End .row -->
                     </div><!-- End .container -->
                 </div><!-- End .bg-light-2 pt-6 pb-6 -->
 
-                <div class="container">
+                <div class="container mb-6 mb-lg-8">
+                    <h2 class="title text-center mb-4">Our Core Values</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="icon-box icon-box-sm text-center">
+                                <span class="icon-box-icon">
+                                    <i class="icon-star-o"></i>
+                                </span>
+                                <div class="icon-box-content">
+                                    <h3 class="icon-box-title">Uncompromising Quality</h3>
+                                    <p>We source only the finest materials and craftsmanship.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="icon-box icon-box-sm text-center">
+                                <span class="icon-box-icon">
+                                    <i class="icon-heart-o"></i>
+                                </span>
+                                <div class="icon-box-content">
+                                    <h3 class="icon-box-title">Elegant Design</h3>
+                                    <p>Timeless aesthetics that elevate your everyday living.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="icon-box icon-box-sm text-center">
+                                <span class="icon-box-icon">
+                                    <i class="icon-leaf"></i>
+                                </span>
+                                <div class="icon-box-content">
+                                    <h3 class="icon-box-title">Sustainability</h3>
+                                    <p>Committed to eco-friendly practices and durable goods.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="icon-box icon-box-sm text-center">
+                                <span class="icon-box-icon">
+                                    <i class="icon-user"></i>
+                                </span>
+                                <div class="icon-box-content">
+                                    <h3 class="icon-box-title">Customer First</h3>
+                                    <p>Your satisfaction is the heartbeat of our brand.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-light-2 pt-7 pb-6 mb-6 mb-lg-8">
+                    <div class="container">
+                        <h2 class="title text-center mb-4">Our Journey</h2>
+                        <div class="row about-story">
+                            <div class="col-md-6">
+                                <div class="story-item left">
+                                    <span class="story-year">2010</span>
+                                    <h3>The Beginning</h3>
+                                    <p>Arymaid started as a small boutique in the heart of the city, driven by a passion for exquisite home decor.</p>
+                                </div>
+                                <div class="story-item left">
+                                    <span class="story-year">2018</span>
+                                    <h3>Global Reach</h3>
+                                    <p>Expanding our horizons, we launched our international shipping to bring Arymaid elegance to homes worldwide.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="story-item right mt-md-6">
+                                    <span class="story-year">2015</span>
+                                    <h3>Digital Transformation</h3>
+                                    <p>Recognizing the need for convenience, we launched our first online store, reaching customers across the nation.</p>
+                                </div>
+                                <div class="story-item right">
+                                    <span class="story-year">2023</span>
+                                    <h3>Premium Evolution</h3>
+                                    <p>Refining our brand to focus on the highest quality essentials, ensuring we remain your premier destination for luxury.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     <div class="row">
                         <div class="col-lg-5">
                             <div class="brands-text">
