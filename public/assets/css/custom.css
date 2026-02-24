@@ -573,3 +573,31 @@ a:hover {
     border-color: var(--primary-color) !important;
     color: #fff !important;
 }
+
+/* Page Specific Text Color Overrides (Green Theme) */
+.table.table-summary .summary-subtotal td:last-child,
+.table.table-summary .summary-total td:last-child,
+.table.table-cart .price-col,
+.table.table-cart .total-col,
+.table.table-compare .price-col,
+.summary-cart .summary-title,
+.checkout-title,
+.table.table-summary thead th,
+.table.table-summary .summary-shipping td,
+.table.table-summary .summary-shipping-row label {
+    color: var(--primary-color) !important;
+}
+
+.table.table-summary .summary-total td:last-child,
+.table.table-cart .total-col {
+    color: var(--primary-color) !important;
+    font-weight: 700;
+}
+
+.product-title a {
+    color: var(--text-main);
+}
+
+.product-title a:hover {
+    color: var(--primary-color) !important;
+}
