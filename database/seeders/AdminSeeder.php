@@ -14,6 +14,7 @@ class AdminSeeder extends Seeder
     {
         Admin::create([
             'name' => 'Super Admin',
+            'userName' => 'superadmin',
             'email' => 'super@arymaid.com',
             'password' => \Illuminate\Support\Facades\Hash::make('password123'),
         ]);
