@@ -7,6 +7,8 @@
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 
+require __DIR__.'/../vendor/autoload.php';
+
 $app = require __DIR__.'/../bootstrap/app.php';
 
 /*
