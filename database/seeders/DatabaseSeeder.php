@@ -18,14 +18,17 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        // Seeders without factories (Safe for production)
         $this->call(CategorieSeeder::class);
         $this->call(AdminSeeder::class);
         $this->call(UserSeeder::class);
-        $this->call(ContactSeeder::class);
         $this->call(ProduitSeeder::class);
-        $this->call(CommandeSeeder::class);
-        $this->call(PanierSeeder::class);
-        $this->call(WishlistSeeder::class);
-        $this->call(FactureSeeder::class);
+
+        // Seeders with factories (Disabled in production due to missing Faker\Factory)
+        // $this->call(ContactSeeder::class);
+        // $this->call(CommandeSeeder::class);
+        // $this->call(PanierSeeder::class);
+        // $this->call(WishlistSeeder::class);
+        // $this->call(FactureSeeder::class);
     }
 }
