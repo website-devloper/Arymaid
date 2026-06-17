@@ -12,6 +12,11 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        Admin::factory(5)->create();
+        Admin::create([
+            'name' => 'Super Admin',
+            'userName' => 'superadmin',
+            'email' => 'super@arymaid.com',
+            'password' => \Illuminate\Support\Facades\Hash::make('password123'),
+        ]);
     }
 }

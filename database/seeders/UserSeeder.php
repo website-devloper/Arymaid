@@ -13,6 +13,28 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        user::factory(5)->create();
+        $users = [
+            [
+                'name' => 'Arymaid Admin',
+                'email' => 'admin@arymaid.com',
+                'password' => \Illuminate\Support\Facades\Hash::make('password123'),
+            ],
+            [
+                'name' => 'John Doe',
+                'email' => 'john@example.com',
+                'password' => \Illuminate\Support\Facades\Hash::make('password'),
+            ],
+            [
+                'name' => 'Jane Smith',
+                'email' => 'jane@example.com',
+                'password' => \Illuminate\Support\Facades\Hash::make('password'),
+            ]
+        ];
+
+        foreach ($users as $u) {
+            user::create($u);
+        }
+
+
     }
 }

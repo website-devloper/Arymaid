@@ -89,9 +89,11 @@ Route::get('/compare/{idProduct}',[CompareController::class,'store']);
 
 Route::get('/deleteCompare/{idProduct}',[CompareController::class,'destroy']);
 
-// END COMPARE ROUTES---------------------------------------------
-
-Route::get('/run-migrations', function () {
-    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
-    return 'Database migrations completed successfully! You can now use the app.';
+Route::get('/run-seeders', function () {
+    try {
+        \Illuminate\Support\Facades\Artisan::call('db:seed', ['--force' => true]);
+        return 'Database seeding completed successfully! All realistic products have been added. You can now visit the homepage.';
+    } catch (\Exception $e) {
+        return 'Error: ' . $e->getMessage() . '<br><br>' . $e->getTraceAsString();
+    }
 });
