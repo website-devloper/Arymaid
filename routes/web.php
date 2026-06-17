@@ -92,6 +92,10 @@ Route::get('/deleteCompare/{idProduct}',[CompareController::class,'destroy']);
 // END COMPARE ROUTES---------------------------------------------
 
 Route::get('/run-migrations', function () {
-    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
-    return 'Database migrations completed successfully! You can now use the app.';
+    try {
+        \Illuminate\Support\Facades\Artisan::call('migrate:fresh', ['--force' => true]);
+        return 'Database migrations completed successfully! You can now use the app.';
+    } catch (\Exception $e) {
+        return 'Error: ' . $e->getMessage() . '<br><br>' . $e->getTraceAsString();
+    }
 });
