@@ -49,6 +49,11 @@ $app = require __DIR__.'/../bootstrap/app.php';
 */
 
 $storagePath = '/tmp/storage';
+$bootstrapCachePath = '/tmp/bootstrap/cache';
+
+if (!is_dir($bootstrapCachePath)) {
+    mkdir($bootstrapCachePath, 0777, true);
+}
 
 if (!is_dir($storagePath)) {
     mkdir($storagePath, 0777, true);
