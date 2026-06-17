@@ -19,6 +19,18 @@
             "dest": "/public/build/$1"
         },
         {
+            "src": "/assets/(.*)",
+            "dest": "/public/assets/$1"
+        },
+        {
+            "src": "/productsImage/(.*)",
+            "dest": "/public/productsImage/$1"
+        },
+        {
+            "src": "/productsHoverImage/(.*)",
+            "dest": "/public/productsHoverImage/$1"
+        },
+        {
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
