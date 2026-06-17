@@ -9,6 +9,33 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
+/*
+|--------------------------------------------------------------------------
+| Clear stale bootstrap cache before booting on Vercel
+|--------------------------------------------------------------------------
+|
+| The bootstrap/cache/services.php and packages.php files may contain
+| hardcoded paths from a developer's local machine. On Vercel's serverless
+| Linux environment these paths don't exist, causing "Target class [view]
+| does not exist". We delete and copy them to /tmp so Laravel regenerates
+| them fresh in this environment.
+|
+*/
+$cacheDir = __DIR__ . '/../bootstrap/cache';
+$tmpCacheDir = '/tmp/laravel-cache';
+
+if (!is_dir($tmpCacheDir)) {
+    mkdir($tmpCacheDir, 0777, true);
+}
+
+// Delete stale cache files that contain hardcoded local paths
+foreach (['services.php', 'packages.php', 'config.php', 'routes-v7.php'] as $cacheFile) {
+    $src = $cacheDir . '/' . $cacheFile;
+    if (file_exists($src)) {
+        @unlink($src);
+    }
+}
+
 $app = require __DIR__.'/../bootstrap/app.php';
 
 /*
